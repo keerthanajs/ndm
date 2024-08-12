@@ -1,9 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import React, {useEffect, useState} from 'react';
 import DeviceList from './DeviceList';
-import DeviceForm from './DeviceForm';
 import axios from "axios";
 
 const App = () => {
@@ -22,7 +22,6 @@ const App = () => {
     return (
         <div>
             <h1>Device Management System</h1>
-            <DeviceForm fetchDevices={fetchDevices} />
             <DeviceList devices={devices} />
         </div>
     );

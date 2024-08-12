@@ -3,8 +3,7 @@ package com.example.demo.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -37,8 +36,23 @@ public class DeviceController {
     public Device createDevice(@RequestBody Device device) {
         return deviceService.saveDevice(device);
     }
+    
+    @PutMapping("/{id}")
+    @CrossOrigin(origins = "http://localhost:3000")
+    public Device updateDevice(@PathVariable Long id, @RequestBody Device deviceDetails) {
+        Device device = deviceService.getDeviceById(id);
+        device.setDeviceName(deviceDetails.getDeviceName());
+        device.setDeviceType(deviceDetails.getDeviceType());
+        device.setModel(deviceDetails.getModel());
+        device.setSerialNumber(deviceDetails.getSerialNumber());
+        device.setLocation(deviceDetails.getLocation());
+        device.setStatus(deviceDetails.getStatus());
+        return deviceService.saveDevice(device);
+    }
+
 
     @DeleteMapping("/{id}")
+    @CrossOrigin(origins = "http://localhost:3000")
     public void deleteDevice(@PathVariable Long id) {
         deviceService.deleteDevice(id);
     }
