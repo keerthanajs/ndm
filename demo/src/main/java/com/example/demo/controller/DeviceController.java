@@ -29,7 +29,7 @@ public class DeviceController {
     }
 
     @GetMapping("/{id}")
-    public Device getDeviceById(@PathVariable String id) {
+    public Device getDeviceById(@PathVariable Long id) {
         return deviceService.getDeviceById(id);
     }
 
@@ -39,7 +39,7 @@ public class DeviceController {
     }
 
     @DeleteMapping("/{id}")
-    public void deleteDevice(@PathVariable String id) {
+    public void deleteDevice(@PathVariable Long id) {
         deviceService.deleteDevice(id);
     }
 }

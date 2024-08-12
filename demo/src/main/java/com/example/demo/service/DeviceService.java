@@ -17,7 +17,7 @@ public class DeviceService {
         return deviceRepository.findAll();
     }
 
-    public Device getDeviceById(String deviceId) {
+    public Device getDeviceById(Long deviceId) {
         return deviceRepository.findById(deviceId).orElse(null);
     }
 
@@ -25,7 +25,7 @@ public class DeviceService {
         return deviceRepository.save(device);
     }
 
-    public void deleteDevice(String deviceId) {
+    public void deleteDevice(Long deviceId) {
         deviceRepository.deleteById(deviceId);
     }
 }

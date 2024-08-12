@@ -3,6 +3,8 @@ package com.example.demo.entity;
 import java.sql.Timestamp;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
@@ -16,7 +18,8 @@ import lombok.EqualsAndHashCode;
 public class DeviceStatusLog {
     @Id
     @EqualsAndHashCode.Include
-    private String logId;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long logId;
     private String status;
     private String message;
     private Timestamp logTimestamp;

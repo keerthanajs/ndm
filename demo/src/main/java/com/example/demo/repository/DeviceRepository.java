@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.example.demo.entity.Device;
 
-public interface DeviceRepository extends JpaRepository<Device, String>{
+public interface DeviceRepository extends JpaRepository<Device, Long>{
 
 }

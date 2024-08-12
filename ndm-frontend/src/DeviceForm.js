@@ -3,7 +3,7 @@ import axios from "axios";
 
 const DeviceForm = ({ fetchDevices }) => {
     const [device, setDevice] = useState({
-        deviceId: "123",
+        //deviceId: "123",
         deviceName: "",
         deviceType: "",
         model:"",

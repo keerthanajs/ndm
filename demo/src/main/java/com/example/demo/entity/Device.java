@@ -1,6 +1,8 @@
 package com.example.demo.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
@@ -13,7 +15,8 @@ import lombok.EqualsAndHashCode;
 public class Device {
 	@Id
 	@EqualsAndHashCode.Include
-	private String deviceId;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long deviceId;
 	
     private String deviceName;
     private String deviceType;

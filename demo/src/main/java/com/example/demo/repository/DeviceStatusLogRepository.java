@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import com.example.demo.entity.DeviceStatusLog;
 
 @Repository
-public interface DeviceStatusLogRepository extends JpaRepository<DeviceStatusLog, String> {
+public interface DeviceStatusLogRepository extends JpaRepository<DeviceStatusLog, Long> {
 	@Query("select ds from DeviceStatusLog ds where ds.device.deviceId = :deviceId")
     List<DeviceStatusLog> findByDeviceId(String deviceId);
 	

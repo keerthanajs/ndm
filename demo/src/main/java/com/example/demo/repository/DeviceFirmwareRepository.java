@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import com.example.demo.entity.DeviceFirmware;
 
 @Repository
-public interface DeviceFirmwareRepository extends JpaRepository<DeviceFirmware, String> {
+public interface DeviceFirmwareRepository extends JpaRepository<DeviceFirmware, Long> {
 	@Query("select df from DeviceFirmware df where df.device.deviceId = :deviceId")
     List<DeviceFirmware> findByDeviceIdAndIsCurrentTrue(@Param("deviceId") String deviceId);
 }
