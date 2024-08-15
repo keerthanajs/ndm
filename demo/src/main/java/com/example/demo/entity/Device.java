@@ -23,6 +23,6 @@ public class Device {
     private String model;
     private String serialNumber;
     private String location;
-    private String status;
+    //private String status;
 	
 }

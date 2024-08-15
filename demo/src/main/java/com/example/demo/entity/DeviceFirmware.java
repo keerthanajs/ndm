@@ -22,7 +22,7 @@ public class DeviceFirmware {
     private Long firmwareId;
     private String firmwareVersion;
     private Date releaseDate;
-    private boolean isCurrent;
+    //private boolean isCurrent;
 
     @ManyToOne
     private Device device;
